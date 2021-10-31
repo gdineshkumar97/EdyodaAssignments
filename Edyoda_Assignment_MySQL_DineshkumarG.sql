@@ -88,10 +88,6 @@ ALTER TABLE Customers
 	ADD CONSTRAINT `customers_ibfk_1` FOREIGN KEY (`Snum`) REFERENCES `salespeople` (`Snum`);
 
 -- Adding FOREIGN KEY
-ALTER TABLE Customers
-	ADD CONSTRAINT `customers_ibfk_1` FOREIGN KEY (`Snum`) REFERENCES `salespeople` (`Snum`);
-
--- Adding FOREIGN KEY
 ALTER TABLE Orders
 	ADD CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`Cnum`) REFERENCES `customers` (`Cnum`),
 	ADD CONSTRAINT `orders_ibfk_2` FOREIGN KEY (`Snum`) REFERENCES `salespeople` (`Snum`);
@@ -115,15 +111,17 @@ WHERE city = 'NewYork';
 
 -- 4) Display the number of Salespeople belonging to London and belonging to Paris.
 
-SELECT salespeople.Sname,
-	orders.Odate
-	FROM salespeople
-	INNER JOIN orders ON salespeople.Snum = orders.Snum;
-	
--- 5)Display the number of orders taken by each Salesperson and their date of orders.
-
 SELECT COUNT(*) FROM Salespeople
 WHERE City = 'London';
 
 SELECT COUNT(*) FROM Salespeople
 WHERE City = 'Paris';
+
+
+	
+-- 5)Display the number of orders taken by each Salesperson and their date of orders.
+
+SELECT salespeople.Sname, 
+	orders.Odate 
+	FROM salespeople 
+	INNER JOIN orders ON salespeople.Snum = orders.Snum;

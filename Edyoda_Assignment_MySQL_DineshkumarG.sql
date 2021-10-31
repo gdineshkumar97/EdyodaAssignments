@@ -1,6 +1,6 @@
 -- NAME 		: Dineshkumar G
--- Assignement 	: MySQL
--- Instructor	: Bharati Reddy
+-- Assignement 		: MySQL
+-- Instructor		: Bharati Reddy
 -- Batch		: DS14082021
 
 CREATE DATABASE edyoda;
